@@ -1,0 +1,258 @@
+/* Importing Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap");
+
+/* Resetting default styles */
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* Main container styles */
+.container {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 0;
+  background: #000000;
+  font-family: "Montserrat", sans-serif;
+  overflow: hidden;
+}
+
+/* Background pattern styles */
+.pattern {
+  position: absolute;
+  top: 50%;
+  left: -10%;
+  width: 600px;
+  height: 600px;
+  transform: translateY(-50%);
+  z-index: 0;
+}
+
+.pattern img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  opacity: 0.15;
+}
+
+/* Logo styles */
+.logo {
+  margin-bottom: 40px;
+  width: 70px;
+  height: 70px;
+}
+
+.logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 0 10px #47d4ff);
+  animation: light-effect 1s linear infinite;
+}
+
+/* Giveaway card styles */
+.giveaway-card {
+  position: relative;
+  height: 80%;
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 40px;
+  background: #000405;
+  box-shadow: 0 8px 10px -9px #6dddff;
+  z-index: 5;
+}
+
+/* Image box within giveaway card */
+.giveaway-card .img-box {
+  width: 100%;
+  height: 100%;
+  margin-right: 30px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Image within image box */
+.giveaway-card .img-box img {
+  height: auto;
+  width: 80%;
+  object-fit: contain;
+}
+
+/* Previous and next buttons within image box */
+.giveaway-card .img-box:hover .prev,
+.giveaway-card .img-box:hover .next {
+  opacity: 1;
+}
+
+/* Previous button */
+.giveaway-card .img-box .prev {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%) rotate(45deg);
+  border-width: 0 0 4px 4px;
+  border-color: #ffffff46;
+  border-style: solid;
+  border-radius: 2px;
+  width: 20px;
+  height: 20px;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.giveaway-card .img-box .prev:hover {
+  border-color: #ffffff85;
+}
+
+/* Next button */
+.giveaway-card .img-box .next {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  border-width: 4px 4px 0 0;
+  border-color: #ffffff46;
+  border-style: solid;
+  border-radius: 2px;
+  width: 20px;
+  height: 20px;
+  opacity: 0;
+  cursor: pointer;
+  transform: translateY(-50%) rotate(45deg);
+}
+
+.giveaway-card .img-box .next:hover {
+  border-color: #ffffff85;
+}
+
+/* Content box within giveaway card */
+.giveaway-card .content-box {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Heading styles */
+.giveaway-card .content-box .heading h1 {
+  margin-bottom: 10px;
+  font-size: 25px;
+  letter-spacing: 3px;
+  color: #c2e8ff;
+  text-shadow: 0 0 5px #1aa7ff;
+}
+
+.giveaway-card .content-box .heading p {
+  margin-bottom: 30px;
+  font-weight: 600;
+  color: #62c3ffbe;
+  letter-spacing: 2px;
+}
+
+/* Giveaway detail styles */
+.giveaway-card .content-box .giveaway-detail {
+  margin-bottom: 25px;
+}
+
+.giveaway-card .content-box .giveaway-detail p {
+  color: #99daff6c;
+}
+
+/* Countdown box styles */
+.giveaway-card .content-box .countdown-box {
+  display: flex;
+}
+
+/* Styles for each countdown unit */
+.giveaway-card .content-box .countdown-box .days,
+.giveaway-card .content-box .countdown-box .hours,
+.giveaway-card .content-box .countdown-box .mins,
+.giveaway-card .content-box .countdown-box .secs {
+  height: 70px;
+  min-width: 70px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-right: 15px;
+  background: #00050a;
+  border: 1px solid #89d4ff52;
+  box-shadow: 0 5px 6px -5px #00c3ff;
+}
+
+/* Number styles within countdown */
+.giveaway-card .content-box .countdown-box .days .number,
+.giveaway-card .content-box .countdown-box .hours .number,
+.giveaway-card .content-box .countdown-box .mins .number,
+.giveaway-card .content-box .countdown-box .secs .number {
+  font-size: 25px;
+  font-weight: 600;
+  color: #c2e8ff;
+  text-shadow: 0 0 5px #1aa7ff;
+}
+
+/* Label styles within countdown */
+.giveaway-card .content-box .countdown-box .days .label,
+.giveaway-card .content-box .countdown-box .hours .label,
+.giveaway-card .content-box .countdown-box .mins .label,
+.giveaway-card .content-box .countdown-box .secs .label {
+  font-size: 11px;
+  color: #d1eeff;
+}
+
+/* Light effect animation */
+@-webkit-keyframes light-effect {
+  0% {
+    filter: drop-shadow(0 0 10px #47d4ff);
+  }
+  49% {
+    filter: drop-shadow(0 0 10px #47d4ff);
+  }
+  50% {
+    filter: drop-shadow(0 0 10px #47d4ff00);
+  }
+  99% {
+    filter: drop-shadow(0 0 10px #47d4ff00);
+  }
+}
+
+@keyframes light-effect {
+  0% {
+    filter: drop-shadow(0 0 10px #47d4ff);
+  }
+  49% {
+    filter: drop-shadow(0 0 10px #47d4ff);
+  }
+  50% {
+    filter: drop-shadow(0 0 10px #47d4ff00);
+  }
+  99% {
+    filter: drop-shadow(0 0 10px #47d4ff00);
+  }
+}
+
+/* Responsive styles */
+@media screen and (max-width: 768px) {
+  .giveaway-card {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .giveaway-card .img-box {
+    margin: 0 0 30px;
+  }
+  .giveaway-card .content-box .countdown-box {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+}
