@@ -36,21 +36,31 @@ nextBtn.addEventListener("click", function () {
 
 // Image slider end -----------------------------------------------------------
 
-// Countdown begin ------------------------------------------------------------
-
-// Object to store DOM elements for countdown
 let time = {
-  days: document.querySelector(".days .number"),
+  days: document.querySelector(".day .number"),
   hours: document.querySelector(".hours .number"),
   mins: document.querySelector(".mins .number"),
   secs: document.querySelector(".secs .number"),
 };
 
 // Countdown setup
-let endSeconds = 59;
-let endMinutes = 59;
-let endHours = 23;
-let endDays = 31;
+let endSeconds;
+let endMinutes;
+let endHours;
+let endDays;
+
+// Check if end time is stored in localStorage, otherwise set default values
+if (localStorage.getItem("endSeconds")) {
+  endSeconds = parseInt(localStorage.getItem("endSeconds"));
+  endMinutes = parseInt(localStorage.getItem("endMinutes"));
+  endHours = parseInt(localStorage.getItem("endHours"));
+  endDays = parseInt(localStorage.getItem("endDays"));
+} else {
+  endSeconds = 59;
+  endMinutes = 59;
+  endHours = 33;
+  endDays = 36;
+}
 
 // Function to update countdown
 let timeCapture = function () {
@@ -64,6 +74,12 @@ let timeCapture = function () {
   }, 1000);
 };
 
-timeCapture();
+// Save end time values to localStorage
+window.addEventListener("beforeunload", function () {
+  localStorage.setItem("endSeconds", endSeconds.toString());
+  localStorage.setItem("endMinutes", endMinutes.toString());
+  localStorage.setItem("endHours", endHours.toString());
+  localStorage.setItem("endDays", endDays.toString());
+});
 
-// Countdown end --------------------------------------------------------------
+timeCapture();
