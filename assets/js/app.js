@@ -50,7 +50,7 @@ let time = {
 let endSeconds = 59;
 let endMinutes = 59;
 let endHours = 23;
-let endDays = 31;
+let endDays = 38;
 
 // Function to update countdown
 let timeCapture = function () {
